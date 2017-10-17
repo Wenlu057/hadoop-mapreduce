@@ -19,3 +19,8 @@
  ** The output of the reducers is key and a list of values. It processes those values in some way, like add up values.**
  
  There is no guarantee that each reducer will get the same number of keys.
+ 
+**Daemons of MapReduce**
+When you run MapReduce job, you submit the job to Job Tracker. The Job Tracker splits the work into mappers and reducers. Those mappers and reducers will run on other cluster nodes.
+
+A daemon called TaskTracker runs the actual Map Reduce tasks in each node. TaskTracker runs on the same machine as DataNode to save network traffic. If the TaskTracker is already busy, a different node will be chosen to process it, and it will be streamed over the network. The mappers read their input data and produce intermediate data which the Hadoop framework will pass to the reducers. The reducers process that data and write their final output back to HDFS.
