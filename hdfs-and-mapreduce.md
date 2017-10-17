@@ -2,6 +2,7 @@
 
 When a file is loaded into HDFS, it's split into chunks which called **blocks**. The default block size is 64 MB. Naming habit is **BLK, an underscore, and a large number**.
 
+**Daemons of HDFS**
 As the file is uploaded to HDFS, each block will get stored on **one node** in the cluster. There's a Damon running on each of the machines in the cluster called the **DataNode**.  The information stored on the NameNode is called **metadata**.
 
 * **one of the nodes fails:**
