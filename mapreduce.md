@@ -24,3 +24,22 @@
 When you run MapReduce job, you submit the job to Job Tracker. The Job Tracker splits the work into mappers and reducers. Those mappers and reducers will run on other cluster nodes.
 
 A daemon called TaskTracker runs the actual Map Reduce tasks in each node. TaskTracker runs on the same machine as DataNode to save network traffic. If the TaskTracker is already busy, a different node will be chosen to process it, and it will be streamed over the network. The mappers read their input data and produce intermediate data which the Hadoop framework will pass to the reducers. The reducers process that data and write their final output back to HDFS.
+
+Hadoop streaming allows you to write your code in any language.
+
+### Running Map Reduce 
+
+1. the root location has the mapper.py and reducer.py
+2. run the Map Reduce command
+
+
+```
+hadoop jar path-to-jar -mapper mapper.py -reducer reducer.py 
+-file mapper.py -file reducer.py -input myinput -output joboutput
+```
+The joboutput directory contains 3 things.
+* _SUCCESS
+* _logs
+* part-00000
+part-00000 is the output from one reducer that we had for this job.
+  

@@ -93,4 +93,11 @@ hadoop fs -put ***.txt directoryName
 ```
 
 
+* Retrieve data from HDFS and put it onto your local disk
+
+
+```
+hadoop fs -get HDFSFile LocalFileName.txt
+```
+
 
