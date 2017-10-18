@@ -8,7 +8,7 @@
  
  ** The output of the Mappers is called intermediate records. Intermediate records are [key, value] pair.**
  
- Once the Mappers have finished, a phase of Map Reduce called the **shuffle and Sort** take place.
+ Once the Mappers have finished, a phase of Map Reduce called the **shuffle and Sort** take place. This is the phase between mapper and reducer.
  
  Shuffle is the movement from mappers to reducers, sort is the reducers will organize these sets of records into sorted order.
  
